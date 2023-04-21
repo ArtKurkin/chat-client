@@ -48,7 +48,7 @@ const LeftBlock = (props) => {
 
   const getRooms = async () => {
     const { data } = await axios.get(
-      `https://online-chat-server-eisw.onrender.com/rooms/${state.userId}`
+      `https://chat-server-teal.vercel.app/rooms/${state.userId}`
     );
     roomDispatch({
       type: "SET_USERROOMS",
@@ -74,7 +74,7 @@ const LeftBlock = (props) => {
 
   const searchClick = async () => {
     const { data } = await axios.post(
-      `https://online-chat-server-eisw.onrender.com/rooms`,
+      `https://chat-server-teal.vercel.app/rooms`,
       {
         roomName: serachValue,
       }
@@ -94,7 +94,7 @@ const LeftBlock = (props) => {
 
   const addChat = async (room) => {
     const { data } = await axios.post(
-      `https://online-chat-server-eisw.onrender.com/room`,
+      `https://chat-server-teal.vercel.app/room`,
       {
         userId: state.userId,
         room: room,
@@ -120,7 +120,7 @@ const LeftBlock = (props) => {
 
   const createRoom = async () => {
     const { data } = await axios.post(
-      `https://online-chat-server-eisw.onrender.com/newroom`,
+      `https://chat-server-teal.vercel.app/newroom`,
       {
         roomName: serachValue,
         userId: state.userId,
