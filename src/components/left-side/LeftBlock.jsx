@@ -93,10 +93,13 @@ const LeftBlock = (props) => {
   };
 
   const addChat = async (room) => {
-    const { data } = await axios.post(`http://localhost:9999/room`, {
-      userId: state.userId,
-      room: room,
-    });
+    const { data } = await axios.post(
+      `https://online-chat-server-eisw.onrender.com/room`,
+      {
+        userId: state.userId,
+        room: room,
+      }
+    );
 
     dispatch({
       type: "SET_USERSINROOM",
@@ -116,10 +119,13 @@ const LeftBlock = (props) => {
   };
 
   const createRoom = async () => {
-    const { data } = await axios.post(`http://localhost:9999/newroom`, {
-      roomName: serachValue,
-      userId: state.userId,
-    });
+    const { data } = await axios.post(
+      `https://online-chat-server-eisw.onrender.com/newroom`,
+      {
+        roomName: serachValue,
+        userId: state.userId,
+      }
+    );
 
     dispatch({
       type: "SET_USERSINROOM",
