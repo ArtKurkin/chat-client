@@ -73,9 +73,12 @@ const LeftBlock = (props) => {
   };
 
   const searchClick = async () => {
-    const { data } = await axios.post(`http://localhost:9999/rooms`, {
-      roomName: serachValue,
-    });
+    const { data } = await axios.post(
+      `https://online-chat-server-eisw.onrender.com/rooms`,
+      {
+        roomName: serachValue,
+      }
+    );
 
     if (data.length) {
       roomDispatch({

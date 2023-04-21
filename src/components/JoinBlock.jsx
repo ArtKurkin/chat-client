@@ -14,6 +14,9 @@ const JoinBlock = ({ onLogin }) => {
       userName,
     };
 
+    console.log("Клик есть");
+    console.log(userName);
+
     socket.emit("JOIN", obj);
   };
 
