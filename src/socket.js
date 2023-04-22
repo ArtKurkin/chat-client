@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 
-const socket = io("https://chat-server-teal.vercel.app", {
+const socket = io("http://217.151.230.115/", {
   transports: ["websocket"],
 });
 

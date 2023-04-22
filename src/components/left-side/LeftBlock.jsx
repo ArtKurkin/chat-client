@@ -48,7 +48,7 @@ const LeftBlock = (props) => {
 
   const getRooms = async () => {
     const { data } = await axios.get(
-      `https://chat-server-teal.vercel.app/rooms/${state.userId}`
+      `http://217.151.230.115/rooms/${state.userId}`
     );
     roomDispatch({
       type: "SET_USERROOMS",
@@ -73,12 +73,9 @@ const LeftBlock = (props) => {
   };
 
   const searchClick = async () => {
-    const { data } = await axios.post(
-      `https://chat-server-teal.vercel.app/rooms`,
-      {
-        roomName: serachValue,
-      }
-    );
+    const { data } = await axios.post(`http://217.151.230.115/rooms`, {
+      roomName: serachValue,
+    });
 
     if (data.length) {
       roomDispatch({
@@ -93,13 +90,10 @@ const LeftBlock = (props) => {
   };
 
   const addChat = async (room) => {
-    const { data } = await axios.post(
-      `https://chat-server-teal.vercel.app/room`,
-      {
-        userId: state.userId,
-        room: room,
-      }
-    );
+    const { data } = await axios.post(`http://217.151.230.115/room`, {
+      userId: state.userId,
+      room: room,
+    });
 
     dispatch({
       type: "SET_USERSINROOM",
@@ -119,13 +113,10 @@ const LeftBlock = (props) => {
   };
 
   const createRoom = async () => {
-    const { data } = await axios.post(
-      `https://chat-server-teal.vercel.app/newroom`,
-      {
-        roomName: serachValue,
-        userId: state.userId,
-      }
-    );
+    const { data } = await axios.post(`http://217.151.230.115/newroom`, {
+      roomName: serachValue,
+      userId: state.userId,
+    });
 
     dispatch({
       type: "SET_USERSINROOM",
