@@ -48,7 +48,7 @@ const LeftBlock = (props) => {
 
   const getRooms = async () => {
     const { data } = await axios.get(
-      `http://217.151.230.115/rooms/${state.userId}`
+      `http://217.151.230.115:5000/rooms/${state.userId}`
     );
     roomDispatch({
       type: "SET_USERROOMS",
@@ -73,7 +73,7 @@ const LeftBlock = (props) => {
   };
 
   const searchClick = async () => {
-    const { data } = await axios.post(`http://217.151.230.115/rooms`, {
+    const { data } = await axios.post(`http://217.151.230.115:5000/rooms`, {
       roomName: serachValue,
     });
 
@@ -90,7 +90,7 @@ const LeftBlock = (props) => {
   };
 
   const addChat = async (room) => {
-    const { data } = await axios.post(`http://217.151.230.115/room`, {
+    const { data } = await axios.post(`http://217.151.230.115:5000/room`, {
       userId: state.userId,
       room: room,
     });
@@ -113,7 +113,7 @@ const LeftBlock = (props) => {
   };
 
   const createRoom = async () => {
-    const { data } = await axios.post(`http://217.151.230.115/newroom`, {
+    const { data } = await axios.post(`http://217.151.230.115:5000/newroom`, {
       roomName: serachValue,
       userId: state.userId,
     });
